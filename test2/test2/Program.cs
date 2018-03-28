@@ -15,14 +15,14 @@ namespace test2
 
             // 設定底色
             Console.BackgroundColor = ConsoleColor.Black;
-
-            // 宣告Random變數ran
-            Random ran = new Random();
-
+            
             // 字串
             Console.WriteLine("樂透號碼生成器");
-
-            // 計算第幾組好碼;
+            
+            // 宣告Random變數ran
+            Random ran = new Random();
+ 
+            // 宣告變數 , 計算第幾組好碼;
             int i = 1;
             // 迴圈 , 讓使用者可以重複使用
             while (true)
@@ -47,8 +47,35 @@ namespace test2
 
                     i = i + 1;
                 }
-  
+
+                Console.WriteLine("輸入本期開獎號碼:");
+                
+                // 輸入號碼 
+                int b1 = int.Parse(Console.ReadLine());
+                int b2 = int.Parse(Console.ReadLine());
+                int b3 = int.Parse(Console.ReadLine());
+                int b4 = int.Parse(Console.ReadLine());
+                int b5 = int.Parse(Console.ReadLine());
+                int b6 = int.Parse(Console.ReadLine());
+   
+                Console.WriteLine(" ╔═════════════════════════════╗ ");
+                Console.WriteLine(" ║ {0:00} ║ {1:00} ║ {2:00} ║ {3:00} ║ {4:00} ║ {5:00} ║ ", b1, b2, b3, b4, b5, b6);
+                Console.WriteLine(" ╚═════════════════════════════╝ ");
+                
+                // if 號碼都相等
+                if (r1 == b1 && r2 == b2 && r3 == b3 && r4 == b4 && r5 == b5 && r6 == b6)
+                {
+                    Console.WriteLine("恭喜你中頭獎 !");
+                }
+                else
+                {
+                    Console.WriteLine("哭哭哦 , 你沒中頭獎 !");
+                }
+
                 Console.ReadKey();
+                // 清空介面
+                Console.Clear();
+
             }
         }
     }
